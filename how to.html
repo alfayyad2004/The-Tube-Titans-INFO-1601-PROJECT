@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Contact Page</title>
+    <title>Tubify</title>
     <style>
       .navbar {
         display: flex;
@@ -39,6 +39,7 @@
       body {
         font-family: Arial, sans-serif;
         font-size: 16px;
+        color: black;
         line-height: 1.5;
         background-color: #f5f5f5;
         background-image: url(background.jpg);
@@ -60,35 +61,31 @@
           background-position: center;
           background-attachment: fixed;
         }
+ /* Animation */
+      h1 span {
+        display: inline-block;
+        animation: rainbow 3s ease-in-out infinite;
+      }
 
-        .paragraph {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          margin-top: 50px;
+      @keyframes rainbow {
+        0% {
+          color: red;
         }
-
-        .paragraph h1 {
-          font-size: 24px;
-          margin-bottom: 20px;
+        25% {
+          color: orange;
         }
-
-        .paragraph p {
-          margin-bottom: 10px;
+        50% {
+          color: yellow;
+        }
+        75% {
+          color: green;
+        }
+        100% {
+          color: blue;
         }
       }
 
-      form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 50px;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      }
+    
 
     </style>
     <nav class="navbar">
@@ -109,12 +106,17 @@
       </a>
     </nav>
   </head>
-  <body>
-    <div class="paragraph">
-      <h1>Having problems? Contact Us!</h1>
-      <p>Are you currently experiencing any technical issues? Please direct your attention to the contents below in order to contact our support staff for assistance.</p>
-      <p>You can contact our support staff using the following e-mail: tubify_support@gmail.com</p>
-      <p>For further support, you can try contacting our lead UI Implementor using the following contact numbers: (868)225-4532 OR (868)226-7874</p>
+<body>
+  <h1><span>How to Use Tubify :</span></h1>
+  <div style="margin: 0 auto ; width:fit-content;height:fit-content;">
+    <div style="margin-left: 40px;">
+      <a style="position:center;top:20px;right:1rem;opacity:0.8;" href="https://clipchamp.com/watch/h2kavLPG87e?utm_source=embed&utm_medium=embed&utm_campaign=watch">
+        <img style="height:22px;" src="https://clipchamp.com/e.svg" alt="Made with Clipchamp" />
+      </a>
+      <iframe allow="autoplay;" alloewfullscreen style="border:none" src="https://clipchamp.com/watch/h2kavLPG87e" width="640" height="360"></iframe>
     </div>
+  </div>
   </body>
 </html>
+
+
