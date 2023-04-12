@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>INFO 1601 Project</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-
-  <link rel="stylesheet" type="text/css" href="FUTURE.css">
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-      <a href="index.html"><img src="video.png" class="Logo"></a>
-      <a href="mp4.html"><button type="button">MP4 Converter</button></a>
-      <a href="mp3.html"><button type="button">MP3 Converter</button></a>
-      <a href="about.html"><button type="button">About</button></a>
-      <a href="contact.html"><button type="button">Contact</button></a> 
-    </nav>
-  </header>
+  <head>
+    <title>INFO 1601 Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="FUTURE.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html">
+          <img src="video.png" class="Logo">
+        </a>
+        <a href="mp4.html">
+          <button type="button">MP4 Converter</button>
+        </a>
+        <a href="mp3.html">
+          <button type="button">MP3 Converter</button>
+        </a>
+        <a href="about.html">
+          <button type="button">About</button>
+        </a>
+        <a href="contact.html">
+          <button type="button">Contact</button>
+        </a>
+      </nav>
+    </header>
     <div class="icons">
       <img src="video.png">
       <img src="video.png">
@@ -26,29 +35,26 @@
       <img src="video.png">
       <img src="video.png">
     </div>
-  <main>
-    <div class="hero">
-      <div class="content">
-        <small>Welcome to Tubify!</small>
-        <h1>The BEST Youtube</h1>
-        <h1>Video Converter</h1>
-        <button type="button" onclick="scrollToContainer('container')">Try now</button>
+    <main>
+      <div class="hero">
+        <div class="content">
+          <small>Welcome to Tubify!</small>
+          <h1>The BEST Youtube</h1>
+          <h1>Video Converter</h1>
+          <button type="button" onclick="scrollToContainer('container')">Try now</button>
+        </div>
       </div>
-    </div>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <div style="height: 1000px; background-color:transparent;">
-      <div class="container" id="container">  
-        <h2>Search for Video (Paste URL or Name)</h2>
-        <input type="text" id="query" placeholder="Search...">
-        <button type="button" onclick="search()">Search</button>
-        
-        <div id="results"></div>
-        <button id="load-more-btn" style="display: none;">Load More</button>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <div style="height: 1000px; background-color:transparent;">
+        <div class="container" id="container">
+          <h2>Search for Video (Paste URL or Name)</h2>
+          <input type="text" id="query" placeholder="Search...">
+          <button type="button" onclick="search()">Search</button>
+          <div id="results"></div>
+          <button id="load-more-btn" style="display: none;">Load More</button>
+        </div>
+        <script src="script.js"></script>
       </div>
-      <script src="script.js"></script>
-    </div>
-  </main>
-
-  
-</body>
+    </main>
+  </body>
 </html>

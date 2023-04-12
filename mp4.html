@@ -1,110 +1,122 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Youtube to MP4 Converter</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="animations.css">
-	<style>
-    .navbar {
-       display: flex;
-       justify-content: space-between;
-       align-items: center;
-       max-width: 1200px;
-       margin: 0 auto;
-       padding: 1rem;
-       background-color: transparent;
-}
-.navbar button{
-   color: black;
-  padding: 10px 12px;
-  background: transparent;
-  border: 1px solid black;
-  border-radius: 10px;
-  outline: none;
-  cursor: pointer;
-  margin-left: 10px; 
-}
-button:hover {
-  background-color: #d32f2f;
-}
+  <head>
+    <title>Youtube to MP4 Converter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="animations.css">
+    <style>
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem;
+        background-color: transparent;
+      }
 
-.navbar a {
-  margin-left: 1rem;
-}
+      .navbar button {
+        color: black;
+        padding: 10px 12px;
+        background: transparent;
+        border: 1px solid black;
+        border-radius: 10px;
+        outline: none;
+        cursor: pointer;
+        margin-left: 10px;
+      }
 
-.Logo {
-  height: 50px;
-}
+      button:hover {
+        background-color: #d32f2f;
+      }
 
-		body {
-			margin: 0;
-			padding: 0;
-			background-image: url('background.jpg');
-			background-size: cover;
-			font-family: Arial, sans-serif;
-			color: #fff;
-		}
-    
- 		form {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			margin-top: 50px;
-			background-color: rgba(0,0,0,0.5);
-			padding: 20px;
-			border-radius: 10px;
-			box-shadow: 0 0 10px rgba(0,0,0,0.5);
-		}
+      .navbar a {
+        margin-left: 1rem;
+      }
 
-		label {
-			font-size: 32px;
-			margin-bottom: 20px;
-			color: #fff;
-		}
+      .Logo {
+        height: 50px;
+      }
 
-		input[type="text"] {
-			padding: 10px;
-			border-radius: 5px;
-			border: none;
-			font-size: 16px;
-			width: 400px;
-		}
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: url('background.jpg');
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        color: #fff;
+      }
 
-		button[type="submit"] {
-			margin-top: 20px;
-			padding: 10px 20px;
-			background-color: #d32f2f;
-			color: #fff;
-			border: none;
-			border-radius: 5px;
-			font-size: 16px;
-			cursor: pointer;
-			transition: background-color 0.3s;
-		}
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
 
-		button[type="submit"]:hover {
-			background-color: #c62828;
-		}
+      label {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #fff;
+      }
 
-		#converted-url {
-			margin-top: 20px;
-			font-size: 18px;
-			color: #fff;
-			text-align: center;
-		}
-	</style>
-</head>
-<body>
-   <header>
-    <nav class="navbar">
-      <a href="index.html"><img src="video.png" class="Logo"></a>
-      <a href="mp4.html"><button type="button">MP4 Converter</button></a>
-      <a href="mp3.html"><button type="button">MP3 Converter</button></a>
-      <a href="about.html"><button type="button">About</button></a>
-      <a href="contact.html"><button type="button">Contact</button></a> 
-    </nav>
-  </header>
+      input[type="text"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+        width: 400px;
+      }
+
+      button[type="submit"] {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #d32f2f;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #c62828;
+      }
+
+      #converted-url {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html">
+          <img src="video.png" class="Logo">
+        </a>
+        <a href="mp4.html">
+          <button type="button">MP4 Converter</button>
+        </a>
+        <a href="mp3.html">
+          <button type="button">MP3 Converter</button>
+        </a>
+        <a href="about.html">
+          <button type="button">About</button>
+        </a>
+        <a href="contact.html">
+          <button type="button">Contact</button>
+        </a>
+      </nav>
+    </header>
     <div class="icons">
       <img src="mp4.png">
       <img src="mp4.png">
@@ -114,17 +126,15 @@ button:hover {
       <img src="mp4.png">
       <img src="mp4.png">
     </div>
-  <main>
-	<form onsubmit="convertVideo(event)">
-		<label for="url">Enter YouTube Video ID:</label>
-		<input type="text" id="url" name="url" placeholder="Eg- dQw4w9WgXcQ">
-		<button type="submit">Convert and Download</button>
-	</form>
-
-	<p id="converted-url"></p>
-
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="script.js"></script>
-  </main>
-</body>
+    <main>
+      <form onsubmit="convertVideo(event)">
+        <label for="url">Enter YouTube Video ID:</label>
+        <input type="text" id="url" name="url" placeholder="Eg- dQw4w9WgXcQ">
+        <button type="submit">Convert and Download</button>
+      </form>
+      <p id="converted-url"></p>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="script.js"></script>
+    </main>
+  </body>
 </html>
