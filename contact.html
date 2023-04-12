@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Page</title>
+    <style>
+      .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: transparent;
+}
+.navbar button{
+   color: black;
+  padding: 10px 12px;
+  background: transparent;
+  border: 1px solid black;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  margin-left: 10px; 
+}
+button:hover {
+  background-color: #d32f2f;
+}
+
+.navbar a {
+  margin-left: 1rem;
+}
+
+.Logo {
+  height: 50px;
+}
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #f5f5f5;
+        background-image: url(background.jpg);
+        background-repeat: no-repeat;
+        background-position: initial;
+        background-size: cover;
+        padding: 10px;
+        text-align: center; /* Center text */
+      }
+
+      /* Add mobile styles */
+      @media screen and (max-width: 480px) {
+        body {
+          font-size: 12px;
+          line-height: 1;
+          background-image: url(mobilebg.jpg);
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+        }
+
+        .paragraph {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-top: 50px;
+        }
+
+        .paragraph h1 {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+
+        .paragraph p {
+          margin-bottom: 10px;
+        }
+      }
+      form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+			background-color: rgba(0,0,0,0.5);
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.5);
+		}
+
+		label {
+			font-size: 18px;
+			margin-bottom: 10px;
+			color: #fff;
+		}
+
+		input[type="text"] {
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			font-size: 16px;
+			width: 400px;
+		}
+
+		button[type="submit"] {
+			margin-top: 20px;
+			padding: 10px 20px;
+			background-color: #d32f2f;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+
+		button[type="submit"]:hover {
+			background-color: #c62828;
+		}
+
+		#converted-url {
+			margin-top: 20px;
+			font-size: 18px;
+			color: #fff;
+			text-align: center;
+		}
+    </style>
+    <nav class="navbar">
+      <a href="index.html"><img src="video.png" class="Logo"></a>
+      <a href="mp4.html"><button type="button">MP4 Converter</button></a>
+      <a href="mp3.html"><button type="button">MP3 Converter</button></a>
+      <a href="about.html"><button type="button">About</button></a>
+      <a href="contact.html"><button type="button">Contact</button></a> 
+    </nav>
+  </head>
+  <body>
+    <div class="paragraph">
+      <h1>Having problems? Contact Us!</h1>
+      <p>Are you currently experiencing any technical issues? Please direct your attention to the contents below in order to contact our support staff for assistance.</p>
+      <p>You can contact our support staff using the following e-mail: tubify_support@gmail.com</p>
+      <p>For further support, you can try contacting our lead UI Implementor using the following contact numbers: (868)225-4532 OR (868)226-7874</p>
+    </div>
+  </body>
+</html>
