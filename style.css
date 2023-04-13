@@ -19,7 +19,7 @@ body {
   padding: 10px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   body {
     font-family: Arial, sans-serif;
     font-size: 12px;
@@ -33,8 +33,122 @@ body {
     justify-content: center;
     align-items: center;
   }
+a {
+  color: #333;
+  text-decoration: none;
 }
+
+ul {
+  list-style: none;
 }
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: transparent;
+}
+
+.navbar button {
+  color: black;
+  padding: 10px 12px;
+  background: transparent;
+  border: 1px solid black;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #d32f2f;
+}
+
+.navbar a {
+  margin-left: 1rem;
+}
+
+.Logo {
+  height: 50px;
+}
+
+/* Main styles */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.hero {
+  background-image: url('hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+.content {
+  text-align: center;
+  color: #fff;
+}
+
+.content small {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.content h1:first-of-type {
+  animation-delay: 0.5s;
+}
+
+.content button {
+  background-color: #d32f2f;
+  color: #333;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  margin-top: 1rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+  
+}
+
 
 a {
   color: #333;

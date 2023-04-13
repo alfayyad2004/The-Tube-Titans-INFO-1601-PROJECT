@@ -84,8 +84,44 @@
           color: blue;
         }
       }
+        @media screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+    line-height: 1;
+    background-image: url(mobilebg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 0; /* Remove padding to fit content on smaller screens */
+  }
+  
+  .navbar {
+    flex-wrap: wrap; /* Allow items to wrap onto new lines */
+    justify-content: center; /* Center items horizontally */
+    padding: 0.5rem; /* Add smaller padding */
+  }
+  
+  .navbar button {
+    margin: 0.5rem; /* Add some space between buttons */
+  }
+  
+  .Logo {
+    height: 30px; /* Make logo smaller */
+    margin-bottom: 1rem; /* Add some space below logo */
+  }
+  
+  h1 {
+    font-size: 24px; /* Make heading larger */
+    margin-top: 1rem; /* Add some space above heading */
+  }
+  
+  iframe {
+    width: 100%; /* Make video fill container width */
+    height: 200px; /* Adjust video height */
+    margin-bottom: 1rem; /* Add some space below video */
+  }
+}
 
-    
 
     </style>
     <nav class="navbar">
