@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Tubify</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       .navbar {
         display: flex;
@@ -37,22 +38,22 @@
       }
 
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Futura", sans-serif;
         font-size: 16px;
         color: black;
         line-height: 1.5;
         background-color: #f5f5f5;
         background-image: url(background.jpg);
         background-repeat: no-repeat;
-        background-position: initial;
+        background-position: center;
         background-size: cover;
         padding: 10px;
         text-align: center;
         /* Center text */
       }
 
-      /* Add mobile styles */
-      @media screen and (max-width: 480px) {
+      /* Media query for screens smaller than 768px */
+      @media (max-width: 768px) {
         body {
           font-size: 12px;
           line-height: 1;
@@ -61,98 +62,209 @@
           background-position: center;
           background-attachment: fixed;
         }
- /* Animation */
-      h1 span {
-        display: inline-block;
-        animation: rainbow 3s ease-in-out infinite;
+
+        /* Hide nav items by default */
+        .nav-items {
+          display: none;
+          position: absolute;
+          top: 100px;
+          left: 0;
+          width: 100%;
+          background-color: #fafafa;
+          background-image: url("grid.jpg");
+          z-index: 9999;
+          border-radius: 10px;
+          text-align: center;
+        }
+
+        /* Show nav items when menu is active */
+        .nav-items.active {
+          display: block;
+        }
+
+        /* Style for nav item links */
+        .nav-items a {
+          display: block;
+          padding: 10px;
+          font-size: 18px;
+        }
+
+        /* Style for hamburger icon container */
+        .mobile-toggle {
+          position: absolute;
+          top: 50px;
+          right: 20px;
+          cursor: pointer;
+        }
+
+        /* Style for hamburger icon lines */
+        .mobile-toggle span {
+          display: block;
+          height: 3px;
+          width: 25px;
+          margin-bottom: 5px;
+          position: relative;
+          background: #333;
+          border-radius: 3px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        /* Animation for middle line of hamburger icon when menu is active */
+        .mobile-toggle.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        /* Animation for top line of hamburger icon when menu is active */
+        .mobile-toggle.active span:nth-child(1) {
+          transform: translateY(10px) rotate(45deg);
+        }
+
+        /* Animation for bottom line of hamburger icon when menu is active */
+        .mobile-toggle.active span:nth-child(3) {
+          transform: translateY(-10px) rotate(-45deg);
+        }
+
+        /* Change background color of hamburger icon lines on hover */
+        .mobile-toggle:hover span {
+          background: #fff;
+        }
+
+        /* Style for navbar container */
+        .navbar {
+          display: flex;
+          justify-content: center;
+          /* center items horizontally */
+          align-items: center;
+          height: 100px;
+          background-color: transparent;
+          position: relative;
+          z-index: 999;
+          padding: 0 20px;
+          float: none;
+        }
+
+        /* Style for navbar links */
+        .navbar a {
+          display: block;
+          padding: 1rem;
+          font-size: 1.2rem;
+          text-decoration: none;
+          color: #fff;
+          transition: color 0.3s ease-in-out;
+        }
+
+        /* Change color of navbar links on hover */
+        .navbar a:hover {
+          color: #ccc;
+        }
+
+        /* Style for logo image */
+        .Logo {
+          height: 50px;
+        }
+
+        /* Animation for navbar links when menu is active */
+        .navbar.active a {
+          animation-name: slideIn;
+          animation-duration: 0.5s;
+          animation-timing-function: ease-in-out;
+          animation-fill-mode: forwards;
+        }
+
+        /* Keyframes for slide in animation of navbar links */
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        body {
+          font-family: "Futura", sans-serif;
+          font-size: 14px;
+          color: black;
+          line-height: 1.5;
+          background-color: #f5f5f5;
+          background-image: url(mobilebg.jpg);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          padding: 10px;
+          text-align: center;
+          /* Center text */
+        }
+
+        /* Mobile styles */
+        .video-container {
+          padding-bottom: 75%;
+          /* 4:3 aspect ratio */
+        }
+
+        .video-container iframe {
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
+
+        .adjust {
+          margin-top: 100px;
+        }
       }
-
-      @keyframes rainbow {
-        0% {
-          color: red;
-        }
-        25% {
-          color: orange;
-        }
-        50% {
-          color: yellow;
-        }
-        75% {
-          color: green;
-        }
-        100% {
-          color: blue;
-        }
-      }
-        @media screen and (max-width: 480px) {
-  body {
-    font-size: 12px;
-    line-height: 1;
-    background-image: url(mobilebg.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 0; /* Remove padding to fit content on smaller screens */
-  }
-  
-  .navbar {
-    flex-wrap: wrap; /* Allow items to wrap onto new lines */
-    justify-content: center; /* Center items horizontally */
-    padding: 0.5rem; /* Add smaller padding */
-  }
-  
-  .navbar button {
-    margin: 0.5rem; /* Add some space between buttons */
-  }
-  
-  .Logo {
-    height: 30px; /* Make logo smaller */
-    margin-bottom: 1rem; /* Add some space below logo */
-  }
-  
-  h1 {
-    font-size: 24px; /* Make heading larger */
-    margin-top: 1rem; /* Add some space above heading */
-  }
-  
-  iframe {
-    width: 100%; /* Make video fill container width */
-    height: 200px; /* Adjust video height */
-    margin-bottom: 1rem; /* Add some space below video */
-  }
-}
-
-
     </style>
-    <nav class="navbar">
-      <a href="index.html">
-        <img src="video.png" class="Logo">
-      </a>
-      <a href="mp4.html">
-        <button type="button">MP4 Converter</button>
-      </a>
-      <a href="mp3.html">
-        <button type="button">MP3 Converter</button>
-      </a>
-      <a href="how to.html">
-        <button type="button">How To</button>
-      </a>
-      <a href="contact.html">
-        <button type="button">Contact</button>
-      </a>
-    </nav>
+    <header>
+      <nav class="navbar">
+        <a href="index.html">
+          <img src="video.png" class="Logo">
+        </a>
+        <div class="mobile-toggle" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-items">
+          <a href="mp4.html">
+            <button type="button">MP4 Converter</button>
+          </a>
+          <a href="mp3.html">
+            <button type="button">MP3 Converter</button>
+          </a>
+          <a href="how to.html">
+            <button type="button">How To</button>
+          </a>
+          <a href="contact.html">
+            <button type="button">Contact</button>
+          </a>
+        </div>
+      </nav>
   </head>
-<body>
-  <h1><span>How to Use Tubify :</span></h1>
-  <div style="margin: 0 auto ; width:fit-content;height:fit-content;">
-    <div style="margin-left: 40px;">
-      <a style="position:center;top:20px;right:1rem;opacity:0.8;" href="https://clipchamp.com/watch/h2kavLPG87e?utm_source=embed&utm_medium=embed&utm_campaign=watch">
-        <img style="height:22px;" src="https://clipchamp.com/e.svg" alt="Made with Clipchamp" />
-      </a>
-      <iframe allow="autoplay;" alloewfullscreen style="border:none" src="https://clipchamp.com/watch/h2kavLPG87e" width="640" height="360"></iframe>
-    </div>
-  </div>
+  <body>
+    <div class="adjust">
+      <h1>
+        <span>How to Use Tubify :</span>
+      </h1>
+      <div class="video-container">
+        <div style="margin: 0 auto ; width:fit-content;height:fit-content;">
+          <div style="margin-left: 40px;">
+            <div style="position:relative;width:fit-content;height:fit-content;">
+              <a style="position:absolute;top:20px;right:1rem;opacity:0.8;" href="https://clipchamp.com/watch/h2kavLPG87e?utm_source=embed&utm_medium=embed&utm_campaign=watch">
+                <img style="height:22px;" src="https://clipchamp.com/e.svg" alt="Made with Clipchamp" />
+              </a>
+              <iframe allow="autoplay;" allowfullscreen style="border:none" src="https://clipchamp.com/watch/h2kavLPG87e/embed" width="640" height="360"></iframe>
+            </div>
+          </div>
+        </div>
+        <script>
+          function toggleMenu() {
+            const menu = document.querySelector('.nav-items');
+            menu.classList.toggle('active');
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            mobileToggle.classList.toggle('active');
+          }
+        </script>
   </body>
 </html>
-
-

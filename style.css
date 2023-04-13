@@ -43,15 +43,157 @@ ul {
 }
 
 
+/* Navigation Menu */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  max-width: 1200px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 1rem;
   background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(0);
 }
+
+/* Mobile Navigation Toggle */
+.navbar-toggle {
+  display: none; /* hide toggle button by default */
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+
+  /* Hide nav items by default */
+  .nav-items {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background-color: #fafafa;
+    background-image: url("grid.jpg");
+    z-index: 9999;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  /* Show nav items when menu is active */
+  .nav-items.active {
+    display: block;
+  }
+
+  /* Style for nav item links */
+  .nav-items a {
+    display: block;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  /* Style for hamburger icon container */
+  .mobile-toggle {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  /* Style for hamburger icon lines */
+  .mobile-toggle span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Animation for middle line of hamburger icon when menu is active */
+  .mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  /* Animation for top line of hamburger icon when menu is active */
+  .mobile-toggle.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  /* Animation for bottom line of hamburger icon when menu is active */
+  .mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  /* Change background color of hamburger icon lines on hover */
+  .mobile-toggle:hover span {
+    background: #fff;
+  }
+
+  /* Style for navbar container */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: #333;
+    position: relative;
+    z-index: 999;
+    padding: 0 20px;
+    float: none;
+  }
+
+  /* Style for navbar links */
+  .navbar a {
+    display: block;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+  }
+
+  /* Change color of navbar links on hover */
+  .navbar a:hover {
+    color: #ccc;
+  }
+
+  /* Style for logo image */
+  .Logo {
+    height: 30px;
+  }
+
+  /* Animation for navbar links when menu is active */
+  .navbar.active a {
+    animation-name: slideIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  /* Keyframes for slide in animation of navbar links */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  
+}
+
+
 
 .navbar button {
   color: black;
@@ -74,6 +216,7 @@ button:hover {
 
 .Logo {
   height: 50px;
+  
 }
 
 /* Main styles */
@@ -143,9 +286,6 @@ body {
     transform: translateY(0);
   }
 }
-
-
-
   
 }
 
@@ -491,4 +631,34 @@ body {
 .copy-button:active {
   background-color: #3e8e41;
   transform: translateY(2px);
+}
+
+@media (max-width: 767px) {
+
+#results {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  margin-top: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+#results .grid-item {
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  width: 100%;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+#results .grid-item:hover {
+  border: 1px solid #333;
+  color: #333;
+  background-color: #f7f7f7;
+  cursor: pointer;
+}
 }

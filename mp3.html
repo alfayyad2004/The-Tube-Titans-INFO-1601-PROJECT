@@ -7,13 +7,333 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" type="text/css" href="animations.css">
     </head>
+    <style>
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem;
+        background-color: transparent;
+      }
+
+      .navbar button {
+        color: black;
+        padding: 10px 12px;
+        background: transparent;
+        border: 1px solid black;
+        border-radius: 10px;
+        outline: none;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+
+      button:hover {
+        background-color: #d32f2f;
+      }
+
+      .navbar a {
+        margin-left: 1rem;
+      }
+
+      .Logo {
+        height: 50px;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: url('background.jpg');
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        color: #fff;
+      }
+
+      .download-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .search-container {
+        display: flex;
+        align-items: center;
+      }
+
+      p {
+        font-size: 32px;
+        color: #fff;
+        margin-bottom: 30px;
+      }
+
+      .search-container input[type="text"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+        width: 400px;
+      }
+
+      .search-container button {
+        margin-left: 10px;
+        padding: 10px 20px;
+        background-color: #d32f2f;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .search-container button:hover {
+        background-color: #c62828;
+      }
+
+      #download-link-container {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+      }
+
+      /* Media query for screens smaller than 768px */
+      @media (max-width: 768px) {
+        body {
+          font-size: 12px;
+          line-height: 1;
+          background-image: url(mobilebg.jpg);
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+        }
+
+        /* Hide nav items by default */
+        .nav-items {
+          display: none;
+          position: absolute;
+          top: 100px;
+          left: 0;
+          width: 100%;
+          background-color: #fafafa;
+          background-image: url("grid.jpg");
+          z-index: 9999;
+          border-radius: 10px;
+          text-align: center;
+        }
+
+        /* Show nav items when menu is active */
+        .nav-items.active {
+          display: block;
+        }
+
+        /* Style for nav item links */
+        .nav-items a {
+          display: block;
+          padding: 10px;
+          font-size: 18px;
+        }
+
+        /* Style for hamburger icon container */
+        .mobile-toggle {
+          position: absolute;
+          top: 50px;
+          right: 20px;
+          cursor: pointer;
+        }
+
+        /* Style for hamburger icon lines */
+        .mobile-toggle span {
+          display: block;
+          height: 3px;
+          width: 25px;
+          margin-bottom: 5px;
+          position: relative;
+          background: #333;
+          border-radius: 3px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        /* Animation for middle line of hamburger icon when menu is active */
+        .mobile-toggle.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        /* Animation for top line of hamburger icon when menu is active */
+        .mobile-toggle.active span:nth-child(1) {
+          transform: translateY(10px) rotate(45deg);
+        }
+
+        /* Animation for bottom line of hamburger icon when menu is active */
+        .mobile-toggle.active span:nth-child(3) {
+          transform: translateY(-10px) rotate(-45deg);
+        }
+
+        /* Change background color of hamburger icon lines on hover */
+        .mobile-toggle:hover span {
+          background: #fff;
+        }
+
+        /* Style for navbar container */
+        .navbar {
+          display: flex;
+          justify-content: center;
+          /* center items horizontally */
+          align-items: center;
+          height: 100px;
+          background-color: transparent;
+          position: relative;
+          z-index: 999;
+          padding: 0 20px;
+          float: none;
+        }
+
+        /* Style for navbar links */
+        .navbar a {
+          display: block;
+          padding: 1rem;
+          font-size: 1.2rem;
+          text-decoration: none;
+          color: #fff;
+          transition: color 0.3s ease-in-out;
+        }
+
+        /* Change color of navbar links on hover */
+        .navbar a:hover {
+          color: #ccc;
+        }
+
+        /* Style for logo image */
+        .Logo {
+          height: 50px;
+        }
+
+        /* Animation for navbar links when menu is active */
+        .navbar.active a {
+          animation-name: slideIn;
+          animation-duration: 0.5s;
+          animation-timing-function: ease-in-out;
+          animation-fill-mode: forwards;
+        }
+
+        /* Keyframes for slide in animation of navbar links */
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        body {
+          font-family: "Futura", sans-serif;
+          font-size: 14px;
+          color: black;
+          line-height: 1.5;
+          background-color: #f5f5f5;
+          background-image: url(mobilebg.jpg);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          padding: 10px;
+          text-align: center;
+          /* Center text */
+        }
+
+        .download-container {
+          margin-top: 100px;
+        }
+
+        .search-container {
+          display: flex;
+          align-items: center;
+        }
+
+        p {
+          font-size: 24px;
+          color: #fff;
+          margin-bottom: 20px;
+        }
+
+        .search-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        p {
+          font-size: 24px;
+          color: #fff;
+          margin-bottom: 20px;
+        }
+
+        .search-container input[type="text"] {
+          padding: 10x;
+          border-radius: 5px;
+          border: none;
+          font-size: 14px;
+          width: 90%;
+          max-width: 500px;
+        }
+
+        .search-container button {
+          margin-top: 10px;
+          padding: 10px;
+          background-color: #d32f2f;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          font-size: 14px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+
+        .search-container button:hover {
+          background-color: #c62828;
+        }
+
+        #download-link-container {
+          margin-top: 30px;
+          font-size: 16px;
+          color: #fff;
+          text-align: center;
+        }
+
+        #download-link-container a {
+          display: inline-block;
+          padding: 10px 20px;
+          background-color: #c62828;
+          color: #fff;
+          text-decoration: none;
+          border-radius: 5px;
+          font-size: 14px;
+          margin-top: 10px;
+          transition: background-color 0.3s;
+        }
+      }
+    </style>
     <body>
       <header>
-        <div class="content">
-          <nav class="navbar">
-            <a href="index.html">
-              <img src="video.png" class="Logo">
-            </a>
+        <nav class="navbar">
+          <a href="index.html">
+            <img src="video.png" class="Logo">
+          </a>
+          <div class="mobile-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="nav-items">
             <a href="mp4.html">
               <button type="button">MP4 Converter</button>
             </a>
@@ -26,114 +346,8 @@
             <a href="contact.html">
               <button type="button">Contact</button>
             </a>
-          </nav>
-        </div>
-        <style>
-          .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
-            background-color: transparent;
-          }
-
-          .navbar button {
-            color: black;
-            padding: 10px 12px;
-            background: transparent;
-            border: 1px solid black;
-            border-radius: 10px;
-            outline: none;
-            cursor: pointer;
-            margin-left: 10px;
-          }
-
-          button:hover {
-            background-color: #d32f2f;
-          }
-
-          .navbar a {
-            margin-left: 1rem;
-          }
-
-          .Logo {
-            height: 50px;
-          }
-
-          body {
-            margin: 0;
-            padding: 0;
-            background-image: url('background.jpg');
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            color: #fff;
-          }
-
-          .down {
-            text-align: center;
-            margin-top: 50px;
-          }
-
-          .down h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-          }
-
-          .download-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 50px;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-          }
-
-          .search-container {
-            display: flex;
-            align-items: center;
-          }
-
-          p {
-            font-size: 32px;
-            color: #fff;
-            margin-bottom: 30px;
-          }
-
-          .search-container input[type="text"] {
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            font-size: 16px;
-            width: 400px;
-          }
-
-          .search-container button {
-            margin-left: 10px;
-            padding: 10px 20px;
-            background-color: #d32f2f;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-          }
-
-          .search-container button:hover {
-            background-color: #c62828;
-          }
-
-          #download-link-container {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #fff;
-            text-align: center;
-          }
-        </style>
+          </div>
+        </nav>
       </header>
       <div class="icons">
         <img src="mp3.png">
@@ -159,4 +373,12 @@
   </div>
   </body>
   </div>
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.nav-items');
+      menu.classList.toggle('active');
+      const mobileToggle = document.querySelector('.mobile-toggle');
+      mobileToggle.classList.toggle('active');
+    }
+  </script>
 </html>

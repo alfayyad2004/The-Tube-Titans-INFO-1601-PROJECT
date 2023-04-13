@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Tubify</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       .navbar {
         display: flex;
@@ -36,37 +37,167 @@
         height: 50px;
       }
 
-      body {
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-        line-height: 1.5;
-        background-color: #f5f5f5;
-        background-image: url(background.jpg);
-        background-repeat: no-repeat;
-        background-position: initial;
-        background-size: cover;
-        padding: 10px;
-        text-align: center;
-        /* Center text */
-      }
+     /* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-image: url(background3.jpg);
+  background-repeat: 1;
+  background-position: center;
+  background-size: contain;
+  background-attachment: fixed;
+  padding: 10px;
+}
+      /* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  body {
+    font-size: 12px;
+    line-height: 1;
+    background-image: url(mobilebg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  /* Hide nav items by default */
+  .nav-items {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background-color: #fafafa;
+    background-image: url("grid.jpg");
+    z-index: 9999;
+    border-radius: 10px;
+    text-align: center;
+  }
 
-      /* Add mobile styles */
-      @media screen and (max-width: 480px) {
-        body {
-          font-size: 12px;
-          line-height: 1;
-          background-image: url(mobilebg.jpg);
-          background-size: cover;
-          background-position: center;
-          background-attachment: fixed;
-        }
+  /* Show nav items when menu is active */
+  .nav-items.active {
+    display: block;
+  }
+
+  /* Style for nav item links */
+  .nav-items a {
+    display: block;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  /* Style for hamburger icon container */
+  .mobile-toggle {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  /* Style for hamburger icon lines */
+  .mobile-toggle span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Animation for middle line of hamburger icon when menu is active */
+  .mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  /* Animation for top line of hamburger icon when menu is active */
+  .mobile-toggle.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  /* Animation for bottom line of hamburger icon when menu is active */
+  .mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  /* Change background color of hamburger icon lines on hover */
+  .mobile-toggle:hover span {
+    background: #fff;
+  }
+
+  /* Style for navbar container */
+ .navbar {
+  display: flex;
+  justify-content: center; /* center items horizontally */
+  align-items: center;
+  height: 100px;
+  background-color: transparent;
+  position: relative;
+  z-index: 999;
+  padding: 0 20px;
+  float: none;
+}
+
+
+  /* Style for navbar links */
+  .navbar a {
+    display: block;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+  }
+
+  /* Change color of navbar links on hover */
+  .navbar a:hover {
+    color: #ccc;
+  }
+
+  /* Style for logo image */
+  .Logo {
+    height: 50px;
+  }
+
+  /* Animation for navbar links when menu is active */
+  .navbar.active a {
+    animation-name: slideIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  /* Keyframes for slide in animation of navbar links */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+  }
+ .paragraph h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+
+  .paragraph p {
+    font-size:20px;
+    margin-bottom: 8px;
+  }
+  
+  }
+
 
         .paragraph {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          margin-top: 50px;
+          margin-top: 100px;
         }
 
         .paragraph h1 {
@@ -77,44 +208,52 @@
         .paragraph p {
           margin-bottom: 10px;
         }
-      }
-
-      form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 50px;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      }
-
+    
     </style>
-    <nav class="navbar">
-      <a href="index.html">
-        <img src="video.png" class="Logo">
-      </a>
-      <a href="mp4.html">
-        <button type="button">MP4 Converter</button>
-      </a>
-      <a href="mp3.html">
-        <button type="button">MP3 Converter</button>
-      </a>
-      <a href="how to.html">
-        <button type="button">How To</button>
-      </a>
-      <a href="contact.html">
-        <button type="button">Contact</button>
-      </a>
-    </nav>
+     <header>
+      <nav class="navbar">
+        <a href="index.html">
+          <img src="video.png" class="Logo">
+        </a>
+        <div class="mobile-toggle" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-items">
+          <a href="mp4.html">
+            <button type="button">MP4 Converter</button>
+          </a>
+          <a href="mp3.html">
+            <button type="button">MP3 Converter</button>
+          </a>
+          <a href="how to.html">
+            <button type="button">How To</button>
+          </a>
+          <a href="contact.html">
+            <button type="button">Contact</button>
+          </a>
+        </div>
+      </nav>
   </head>
   <body>
     <div class="paragraph">
       <h1>Having problems? Contact Us!</h1>
       <p>Are you currently experiencing any technical issues? Please direct your attention to the contents below in order to contact our support staff for assistance.</p>
-      <p>You can contact our support staff using the following e-mail: tubify_support@gmail.com</p>
+      <p>You can contact our support staff using the following e-mail: <a href="mailto:tubify_support@gmail.com">tubify_support@gmail.com</a></p>
+        
       <p>For further support, you can try contacting our lead UI Implementor using the following contact numbers: (868)225-4532 OR (868)226-7874</p>
     </div>
+    
+    <script>
+  function toggleMenu() {
+    const menu = document.querySelector('.nav-items');
+    menu.classList.toggle('active');
+    
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    mobileToggle.classList.toggle('active');
+  }
+</script>
+
   </body>
 </html>

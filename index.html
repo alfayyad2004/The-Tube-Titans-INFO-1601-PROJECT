@@ -13,18 +13,25 @@
         <a href="index.html">
           <img src="video.png" class="Logo">
         </a>
-        <a href="mp4.html">
-          <button type="button">MP4 Converter</button>
-        </a>
-        <a href="mp3.html">
-          <button type="button">MP3 Converter</button>
-        </a>
-        <a href="how to.html">
-          <button type="button">How To</button>
-        </a>
-        <a href="contact.html">
-          <button type="button">Contact</button>
-        </a>
+        <div class="mobile-toggle" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-items">
+          <a href="mp4.html">
+            <button type="button">MP4 Converter</button>
+          </a>
+          <a href="mp3.html">
+            <button type="button">MP3 Converter</button>
+          </a>
+          <a href="how to.html">
+            <button type="button">How To</button>
+          </a>
+          <a href="contact.html">
+            <button type="button">Contact</button>
+          </a>
+        </div>
       </nav>
     </header>
     <div class="icons">
@@ -57,5 +64,15 @@
         <script src="script.js"></script>
       </div>
     </main>
+    <script>
+      function toggleMenu() {
+        var navbar = document.querySelector('.navbar');
+        var navItems = document.querySelector('.nav-items');
+        var mobileToggle = document.querySelector('.mobile-toggle');
+        navbar.classList.toggle('active');
+        navItems.classList.toggle('active');
+        mobileToggle.classList.toggle('active');
+      }
+    </script>
   </body>
 </html>
