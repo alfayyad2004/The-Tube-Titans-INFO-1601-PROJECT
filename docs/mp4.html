@@ -100,7 +100,12 @@
       v-items.active {
         display: block;
       }
-
+      
+      .para {
+      text-align: center;
+      font-size: 24px; 
+      color: black;
+      }
       /* Media query for screens smaller than 768px */
       @media (max-width: 768px) {
         body {
@@ -317,7 +322,7 @@
     </div>
     <main>
       <form onsubmit="convertVideo(event)">
-        <label for="url">Enter YouTube Video ID:</label>
+        <label for="url">Enter YouTube Video ID:</label>      
         <input type="text" id="url" name="url" placeholder="Eg- dQw4w9WgXcQ">
         <button type="submit">Convert and Download</button>
       </form>
@@ -325,6 +330,9 @@
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
       <script src="script.js"></script>
     </main>
+   <div class= "para">
+  <p>(Works For Some Videos Due to Youtube's Policy)</p>
+</div>
   </body>
   <script>
     function toggleMenu() {
